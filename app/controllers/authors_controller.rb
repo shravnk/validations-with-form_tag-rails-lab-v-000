@@ -16,6 +16,13 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def update
+    if @author.update
+      redirect_to author_path(@author)
+    else
+      render :edit
+    end
+
   private
 
   def author_params
